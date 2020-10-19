@@ -1,20 +1,19 @@
-package Ex1
+package ex1
 
-fun main()
-{
+fun main() {
     val secondary = 500_000
     agoToText(secondary)
 }
 
-fun agoToText(secondary : Int){
-    when{
+fun agoToText(secondary: Int) {
+    when {
         secondary < 3600 -> secondaryToMinutes(secondary)
         secondary < 86_400 -> secondaryToHour(secondary)
         secondary >= 86_400 -> secondaryToDay(secondary)
     }
 }
 
-fun secondaryToMinutes(secondary : Int) {
+fun secondaryToMinutes(secondary: Int) {
     val minutes = secondary / 60
     when {
         minutes % 10 == 1 && minutes != 11 -> {
@@ -31,7 +30,7 @@ fun secondaryToMinutes(secondary : Int) {
 
 }
 
-fun secondaryToHour(secondary : Int) {
+fun secondaryToHour(secondary: Int) {
     val hour = secondary / 3600
     when {
         hour % 10 == 1 && hour != 11 -> {
@@ -46,7 +45,7 @@ fun secondaryToHour(secondary : Int) {
     }
 }
 
-fun secondaryToDay(secondary : Int) {
+fun secondaryToDay(secondary: Int) {
     val day = secondary / 86_400
     when (day) {
         in 1..1 -> {

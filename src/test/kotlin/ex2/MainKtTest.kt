@@ -38,7 +38,7 @@ class MainKtTest{
 
     @Test
     fun firstCard4() {
-        val sum = 500000
+        val sum = 50
         var amount = ((sum * 100) * 0.006 + 2000).toInt()
         amount += sum * 100
         assertEquals("Превышен лимит отправки", firstCard(sum, true, 200000))

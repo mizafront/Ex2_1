@@ -31,14 +31,12 @@ class MainKtTest{
         var amount = ((sum * 100) * 0.006 + 2000).toInt()
         amount += sum * 100
         val action = false
-        if(action == true) {
-            assertEquals("Сумма перевода ${amount / 100} р. ${amount % 100} кооп. 2", firstCard(sum, true, 0))
-        }else assertEquals("Сумма перевода ${amount / 100} р. ${amount % 100} кооп. 3", firstCard(sum, false, 0))
+        assertEquals("Сумма перевода ${amount / 100} р. ${amount % 100} кооп. 3", firstCard(sum, action, 0))
     }
 
     @Test
     fun firstCard4() {
-        val sum = 50
+        val sum = 5000000
         var amount = ((sum * 100) * 0.006 + 2000).toInt()
         amount += sum * 100
         assertEquals("Превышен лимит отправки", firstCard(sum, true, 200000))
